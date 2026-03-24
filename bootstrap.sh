@@ -2,7 +2,7 @@
 # Bootstrap a new dev machine before the onboarding repo is cloned.
 #
 # Usage (once the repo is public):
-#   curl -fsSL https://raw.githubusercontent.com/YOUR_ORG/dev-setup/main/bootstrap.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/sa5mmm7/dev-setup/main/bootstrap.sh | bash
 #
 # What this does:
 #   1. Installs git if missing (Xcode CLT on macOS, apt on WSL2)
@@ -10,7 +10,7 @@
 #   3. Runs run-onboarding.sh
 set -euo pipefail
 
-REPO_URL="https://github.com/YOUR_ORG/dev-setup.git"
+REPO_URL="https://github.com/sa5mmm7/dev-setup.git"
 CLONE_DIR="${HOME}/dev-setup"
 
 # --- helpers ---
@@ -34,7 +34,7 @@ if ! command -v git >/dev/null 2>&1; then
     echo "Xcode Command Line Tools (this includes git)."
     echo ""
     echo "After the install completes, run this script again:"
-    echo "  curl -fsSL https://raw.githubusercontent.com/YOUR_ORG/dev-setup/main/bootstrap.sh | bash"
+    echo "  curl -fsSL https://raw.githubusercontent.com/sa5mmm7/dev-setup/main/bootstrap.sh | bash"
     echo ""
     # Trigger the macOS install dialog
     git --version 2>/dev/null || true

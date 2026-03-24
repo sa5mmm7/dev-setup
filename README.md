@@ -11,7 +11,7 @@ This repo is the **public tooling layer**. Your team maintains a separate **priv
 **macOS (no git yet):**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_ORG/dev-setup/main/bootstrap.sh | bash
+curl -fsSL https://raw.githubusercontent.com/sa5mmm7/dev-setup/main/bootstrap.sh | bash
 ```
 
 **Windows** — WSL2 must be set up first. In PowerShell (as Administrator):
@@ -23,13 +23,13 @@ wsl --install
 Restart, open Ubuntu from the Start menu, then run inside WSL2:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_ORG/dev-setup/main/bootstrap.sh | bash
+curl -fsSL https://raw.githubusercontent.com/sa5mmm7/dev-setup/main/bootstrap.sh | bash
 ```
 
 **Already have git:**
 
 ```bash
-git clone https://github.com/YOUR_ORG/dev-setup.git ~/dev-setup
+git clone https://github.com/sa5mmm7/dev-setup.git ~/dev-setup
 cd ~/dev-setup
 cp config/team.env.example config/team.env
 # Edit config/team.env with your team's values, then:
