@@ -82,6 +82,12 @@ configure_ssh_signing() {
   git config --global user.signingkey "${signing_key}"
   git config --global commit.gpgsign true
   info "SSH commit signing configured with ${signing_key}"
+
+  # Add key to ssh-agent so commits work in the current session
+  local key_private="${signing_key%.pub}"
+  ssh-add "${key_private}" 2>/dev/null \
+    && info "SSH key added to agent." \
+    || warn "Could not add SSH key to agent — if commits fail, run: ssh-add ${key_private}"
 }
 
 write_state() {
