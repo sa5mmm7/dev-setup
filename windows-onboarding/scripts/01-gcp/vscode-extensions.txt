@@ -1,0 +1,4 @@
+# GCP / Dataform extensions
+googlecloudtools.cloudcode
+ashishalex.dataform-lsp-vscode
+github.vscode-github-actions

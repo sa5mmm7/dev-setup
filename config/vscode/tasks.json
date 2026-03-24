@@ -1,0 +1,110 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Ruff: Lint",
+      "type": "shell",
+      "command": "ruff check .",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Ruff: Fix",
+      "type": "shell",
+      "command": "ruff check --fix .",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Pre-commit: Run all hooks",
+      "type": "shell",
+      "command": "pre-commit run --all-files",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Podman: Build (Dockerfile)",
+      "type": "shell",
+      "command": "[[ -f Dockerfile ]] && podman build -f Dockerfile -t $(basename $PWD) . || echo '[WARN] No Dockerfile found in project root'",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Podman: Build Dev (Dockerfile.dev)",
+      "type": "shell",
+      "command": "[[ -f Dockerfile.dev ]] && podman build -f Dockerfile.dev -t $(basename $PWD):dev . || echo '[WARN] No Dockerfile.dev found in project root'",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Podman: Install sub-project requirements",
+      "type": "shell",
+      "command": "bash .vscode/install-requirements.sh",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Project: Setup dev container + VS Code config",
+      "type": "shell",
+      "command": "project-devcontainer",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Python: Switch version (pyenv local)",
+      "type": "shell",
+      "command": "pyenv local ${input:pythonVersion} && echo 'Reload VS Code window to apply: Cmd+Shift+P > Reload Window'",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "pythonVersion",
+      "type": "pickString",
+      "description": "Select Python version",
+      "options": ["3.9.18", "3.10.14", "3.14.0"],
+      "default": "3.14.0"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Git / GitHub extensions
+eamodio.gitlens
+GitHub.vscode-pull-request-github
+adam-bender.commit-message-editor

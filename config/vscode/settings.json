@@ -1,0 +1,19 @@
+{
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "black-formatter.args": ["--line-length", "88"],
+  "ruff.lint.select": ["E", "F", "W", "C90"],
+  "ruff.fixAll": true,
+  "ruff.format.enable": false,
+  "jupyter.enableCellCodeLens": true,
+  "jupyter.askForKernelRestart": false,
+  "git.enableCommitSigning": __COMMIT_SIGNING__,
+  "git.commitMessageTemplate": ".gitmessage.txt",
+  "commit-message-editor.configFile": ".vscode/commit-message-editor.json",
+  "gitlens.views.fileHistory.enabled": true,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "dev.containers.dockerPath": "podman",
+  "containers.containerClient": "podman"
+}

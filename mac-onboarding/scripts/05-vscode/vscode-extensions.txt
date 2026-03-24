@@ -1,0 +1,2 @@
+# Core VS Code extensions
+redhat.vscode-yaml

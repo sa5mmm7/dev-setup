@@ -1,0 +1,118 @@
+{
+  "$schema": "https://bendera.github.io/vscode-commit-message-editor/schemas/config-v1.schema.json",
+  "configVersion": "1",
+  "staticTemplate": [
+    "feat: Short description",
+    "",
+    "Message body",
+    "",
+    "Message footer"
+  ],
+  "dynamicTemplate": [
+    "{type}{scope}: {subject}",
+    "",
+    "{body}",
+    "",
+    "{breaking_change}{footer}"
+  ],
+  "tokens": [
+    {
+      "label": "Type",
+      "name": "type",
+      "type": "enum",
+      "description": "Type of changes",
+      "options": [
+        {
+          "label": "---",
+          "value": ""
+        },
+        {
+          "label": "build",
+          "description": "Changes that affect the build system or external dependencies (example scopes: gulp, npm)"
+        },
+        {
+          "label": "chore",
+          "description": "Changes to auxiliary tools and libraries (i.e. configs)"
+        },
+        {
+          "label": "ci",
+          "description": "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)"
+        },
+        {
+          "label": "docs",
+          "description": "Documentation only changes (i.e. Markdown, code comments, docstrings, etc)"
+        },
+        {
+          "label": "feat",
+          "description": "A new feature"
+        },
+        {
+          "label": "fix",
+          "description": "A bug fix"
+        },
+        {
+          "label": "perf",
+          "description": "A code change that improves performance"
+        },
+        {
+          "label": "refactor",
+          "description": "A code change that neither fixes a bug nor adds a feature"
+        },
+        {
+          "label": "revert",
+          "description": "Reverting a previous commit"
+        },
+        {
+          "label": "style",
+          "description": "* Changes that were only involving style sheets (CSS, SASS, LESS, etc)\n* Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+        },
+        {
+          "label": "test",
+          "description": "Adding missing tests or correcting existing tests"
+        },
+        {
+          "label": "content",
+          "value": "",
+          "description": "A change in the content that is visually displayed (i.e labels, text, copytext)"
+        }
+      ]
+    },
+    {
+      "label": "Scope",
+      "name": "scope",
+      "type": "text",
+      "description": "A scope may be provided to a commit’s type, to provide additional contextual information and is contained within parenthesis, e.g., \"feat(parser): add ability to parse arrays\" (optional)",
+      "prefix": "(",
+      "suffix": ")"
+    },
+    {
+      "label": "Short description",
+      "name": "subject",
+      "type": "text",
+      "description": "The subject contains succinct description of the change:\n\n* Use the imperative, present tense: \"change\" not \"changed\" nor \"changes\"\n* Don't capitalize first letter\n* No dot (.) at the end"
+    },
+    {
+      "label": "Body",
+      "name": "body",
+      "type": "text",
+      "description": "Just as in the subject, use the imperative, present tense. The body should include the motivation for the change and contrast this with previous behavior. (optional)",
+      "maxLines": 10,
+      "multiline": true,
+      "lines": 5
+    },
+    {
+      "label": "Breaking change",
+      "name": "breaking_change",
+      "type": "boolean",
+      "value": "BREAKING CHANGE: ",
+      "default": false
+    },
+    {
+      "label": "Footer",
+      "name": "footer",
+      "type": "text",
+      "description": "The footer should contain any information about Breaking Changes (optional)",
+      "multiline": true
+    }
+  ]
+}
