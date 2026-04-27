@@ -1,6 +1,6 @@
 # Windows Onboarding
 
-> **Not yet implemented.** See `mac-onboarding/` for the current setup.
+Automated developer onboarding for Windows using WSL2.
 
 ## Prerequisites (manual steps)
 
@@ -13,6 +13,20 @@ Before running any scripts, WSL2 must be set up on the Windows machine:
 5. Run: `wsl --set-default-version 2`
 
 After WSL2 is ready, clone this repo inside WSL2 and run from there.
+
+## Running onboarding
+
+Run the full setup:
+
+```bash
+./run-onboarding.sh
+```
+
+Run only the Git + GitHub step:
+
+```bash
+./run-onboarding.sh 2
+```
 
 ## Differences from macOS
 
